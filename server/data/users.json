@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Alice Silva",
+        "email": "alice@example.com",
+        "password": "password123",
+        "jobTitle": "Desenvolvedora",
+        "teamId": null
+    },
+    {
+        "name": "Bruno Costa",
+        "email": "bruno@example.com",
+        "password": "password456",
+        "jobTitle": "Designer",
+        "teamId": 1
+    },
+    {
+        "name": "Carla Souza",
+        "email": "carla@example.com",
+        "password": "password789",
+        "jobTitle": "Gestora de Projetos",
+        "teamId": 1
+    },
+    {
+        "name": "Daniel Oliveira",
+        "email": "daniel@example.com",
+        "password": "password012",
+        "jobTitle": "Tester",
+        "teamId": null
+    }
+]
