@@ -34,5 +34,32 @@
     "members": 2,
     "description": "Equipa responsável pelos testes e garantia de qualidade.",
     "creationDate": "2024-01-22"
+  },
+  {
+    "id": 1716218218978,
+    "teamName": "Boda",
+    "sector": "2",
+    "teamLeader": "Alice Silva",
+    "members": null,
+    "description": "aaaa",
+    "creationDate": "2024-05-20"
+  },
+  {
+    "id": 1716218224072,
+    "teamName": "Boda",
+    "sector": "2",
+    "teamLeader": "Alice Silva",
+    "members": null,
+    "description": "aaaa",
+    "creationDate": "2024-05-20"
+  },
+  {
+    "id": 1716218279118,
+    "teamName": "awd",
+    "sector": "awd",
+    "teamLeader": "Alice Silva",
+    "members": null,
+    "description": "awdad",
+    "creationDate": "2024-05-20"
   }
 ]

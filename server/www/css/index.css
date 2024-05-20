@@ -1,0 +1,75 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1e88e5; 
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.boas-vindas {
+    margin-bottom: 30px;
+}
+
+.boas-vindas h2 {
+    color: #1e88e5;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links .button {
+    display: inline-block;
+    background-color: #1e88e5; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.links .button:hover {
+    background-color: #1565c0; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    margin: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; 
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #1e88e5; 
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}

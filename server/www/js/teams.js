@@ -73,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
           listItem.appendChild(name);
           listItem.appendChild(sectorElement);
           listItem.appendChild(teamLeaderElement);
-          listItem.appendChild(members);
           listItem.appendChild(descriptionElement);
 
           teamList.appendChild(listItem);
