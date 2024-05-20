@@ -3,25 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/users.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/teams.css">
   <title>Teams</title>
 </head>
 <body>
-  <h1>Teams</h1>
-  <div id="welcomeMessage"></div>
-  <a href="index.html">Home</a>
-  <h2>Create a New Team</h2>
-  <form id="createTeamForm">
-    <label for="teamName">Team Name:</label>
-    <input type="text" id="teamName" required>
-    <label for="sector">Sector:</label>
-    <input type="text" id="sector" required>
-    <label for="description">Description:</label>
-    <textarea id="description" required></textarea>
-    <button type="submit">Create Team</button>
-  </form>
-  <h2>Existing Teams</h2>
-  <ul id="teamList"></ul>
+  <header>
+    <div class="title-bar">
+      <h1>Listagem de Equipas </h1>
+      <a href="index.html" class="home-button">Home</a>
+    </div>
+  </header>
+  <main>
+    <div id="welcomeMessage" class="welcome-message"></div>
+    <section class="create-team">
+      <form id="createTeamForm">
+        <h2>Create a New Team</h2>
+        <label for="teamName">Team Name:</label>
+        <input type="text" id="teamName" required>
+        <label for="sector">Sector:</label>
+        <input type="text" id="sector" required>
+        <label for="description">Description:</label>
+        <textarea id="description" required></textarea>
+        <button type="submit" class="create-button">Create Team</button>
+      </form>
+    </section>
+    <section class="existing-teams">
+      <h2>Existing Teams</h2>
+      <ul id="teamList"></ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 - Desenvolvido por Afonso Bergano, Samuel Santos & João Correia</p>
+  </footer>
   <script src="js/teams.js"></script>
 </body>
 </html>

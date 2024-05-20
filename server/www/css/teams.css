@@ -3,61 +3,29 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
     background-color: #1e88e5; /* Azul */
     color: white;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
-main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column; /* Exibir os blocos de usuário em coluna vertical */
-}
-
-footer {
-    background-color: #1e88e5; /* Azul */
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-/* Estilos para as caixas de usuário */
-.user-box {
-    background-color: #ffffff; /* Branco */
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-/* Adicionando estilo para o título e link Home */
 .title-bar {
-    background-color: #1e88e5; 
-    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px;
+    padding: 0 20px;
 }
 
 .title-bar h1 {
     margin: 0;
 }
 
-.title-bar a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Estilo para o botão Home */
 .home-button {
     background-color: #1e88e5; /* Azul */
     color: white;
@@ -65,43 +33,89 @@ footer {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .home-button:hover {
     background-color: #1565c0; /* Azul mais escuro ao passar o mouse */
 }
 
-.home-button a {
-    color: white;
-    text-decoration: none;
+main {
+    padding: 20px;
+    flex: 1;
 }
 
-h2 {
-    margin-top: 30px;
-}
-
-form {
+.welcome-message {
     margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #333;
 }
 
-form label {
+.welcome-message .user-name {
+    color: #1e88e5; /* Azul */
+}
+
+#createTeamForm, .existing-teams {
+    background-color: white; /* Branco */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#createTeamForm label, #createTeamForm input, #createTeamForm textarea, #createTeamForm button {
     display: block;
-    margin-bottom: 5px;
+    width: 80%; /* Reduzir a largura dos campos */
+    margin: 0 auto 10px; /* Centralizar e adicionar margem inferior */
 }
 
-form input,
-form textarea {
-    width: 100%;
+#createTeamForm input, #createTeamForm textarea {
     padding: 10px;
     border: 1px solid #b0bec5;
     border-radius: 4px;
-    margin-bottom: 15px;
 }
 
-form button {
-    width: 100%;
-    padding: 10px;
+#createTeamForm button {
     background-color: #1e88e5; /* Azul */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+#createTeamForm button:hover {
+    background-color: #1565c0; /* Azul mais escuro ao passar o mouse */
+}
+
+.existing-teams ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.existing-teams li {
+    background-color: white; /* Branco */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+footer {
+    background-color: #1e88e5; /* Azul */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.create-button {
+    display: block;
+    width: 40%; /* Ajuste a largura conforme necessário */
+    margin: 20px auto 0; /* Centralizar e adicionar margem superior */
+    padding: 10px;
+    background-color: #1e88e5;
     border: none;
     border-radius: 4px;
     color: #ffffff;
@@ -110,19 +124,6 @@ form button {
     transition: background-color 0.3s ease;
 }
 
-form button:hover {
+.create-button:hover {
     background-color: #1565c0; /* Azul mais escuro ao passar o mouse */
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    background: white;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
