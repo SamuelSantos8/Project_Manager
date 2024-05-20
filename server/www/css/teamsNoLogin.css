@@ -1,0 +1,78 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #1e88e5; /* Azul */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Exibir os blocos de usuário em coluna vertical */
+}
+
+footer {
+    background-color: #1e88e5; /* Azul */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Estilos para as caixas de usuário */
+.user-box {
+    background-color: #ffffff; /* Branco */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* Adicionando estilo para o título e link Home */
+.title-bar {
+    background-color: #1e88e5; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.title-bar h1 {
+    margin: 0;
+}
+
+.title-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo para o botão Home */
+.home-button {
+    background-color: #1e88e5; /* Azul */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.home-button:hover {
+    background-color: #1565c0; 
+}
+
+.home-button a {
+    color: white;
+    text-decoration: none;
+}
+
