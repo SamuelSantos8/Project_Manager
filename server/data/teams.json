@@ -1,38 +1,38 @@
 [
-    {
-        "id": 1,
-        "teamName": "Desenvolvimento",
-        "sector": "Tecnologia",
-        "teamLeader": "Ana Silva",
-        "members": 5,
-        "description": "Equipa responsável pelo desenvolvimento de software.",
-        "creationDate": "2024-01-15"
-    },
-    {
-        "id": 2,
-        "teamName": "Design",
-        "sector": "Criação",
-        "teamLeader": "João Costa",
-        "members": 3,
-        "description": "Equipa responsável pelo design gráfico e UX/UI.",
-        "creationDate": "2024-01-18"
-    },
-    {
-        "id": 3,
-        "teamName": "Gestão de Projetos",
-        "sector": "Gestão",
-        "teamLeader": "Maria Oliveira",
-        "members": 4,
-        "description": "Equipa responsável pela gestão e organização dos projetos.",
-        "creationDate": "2024-01-20"
-    },
-    {
-        "id": 4,
-        "teamName": "Testes",
-        "sector": "Qualidade",
-        "teamLeader": "Pedro Ferreira",
-        "members": 2,
-        "description": "Equipa responsável pelos testes e garantia de qualidade.",
-        "creationDate": "2024-01-22"
-    }
+  {
+    "id": 1,
+    "teamName": "Desenvolvimento",
+    "sector": "Tecnologia",
+    "teamLeader": "Ana Silva",
+    "members": 5,
+    "description": "Equipa responsável pelo desenvolvimento de software.",
+    "creationDate": "2024-01-15"
+  },
+  {
+    "id": 2,
+    "teamName": "Design",
+    "sector": "Criação",
+    "teamLeader": "João Costa",
+    "members": 3,
+    "description": "Equipa responsável pelo design gráfico e UX/UI.",
+    "creationDate": "2024-01-18"
+  },
+  {
+    "id": 3,
+    "teamName": "Gestão de Projetos",
+    "sector": "Gestão",
+    "teamLeader": "Maria Oliveira",
+    "members": 4,
+    "description": "Equipa responsável pela gestão e organização dos projetos.",
+    "creationDate": "2024-01-20"
+  },
+  {
+    "id": 4,
+    "teamName": "Testes",
+    "sector": "Qualidade",
+    "teamLeader": "Pedro Ferreira",
+    "members": 2,
+    "description": "Equipa responsável pelos testes e garantia de qualidade.",
+    "creationDate": "2024-01-22"
+  }
 ]

@@ -45,6 +45,17 @@ app.get('/api/teams', (req, res) => {
   });
 });
 
+app.get('/api/users', (req, res) => {
+  fs.readFile('data/users.json', (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to read users data' });
+    }
+    const users = JSON.parse(data);
+    res.json(users);
+  });
+});
+
+
 // Create a new team
 app.post('/api/teams', (req, res) => {
   const { teamName, sector, teamLeader, members, description } = req.body;

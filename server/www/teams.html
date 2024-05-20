@@ -3,250 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Teams</title>
 </head>
 <body>
   <h1>Teams</h1>
   <div id="welcomeMessage"></div>
+  <a href="index.html">Home</a>
   <h2>Create a New Team</h2>
   <form id="createTeamForm">
     <label for="teamName">Team Name:</label>
     <input type="text" id="teamName" required>
     <label for="sector">Sector:</label>
     <input type="text" id="sector" required>
-    <label for="teamLeader">Team Leader:</label>
-    <input type="text" id="teamLeader" required>
-    <label for="members">Number of Members:</label>
-    <input type="number" id="members" required>
     <label for="description">Description:</label>
     <textarea id="description" required></textarea>
     <button type="submit">Create Team</button>
   </form>
   <h2>Existing Teams</h2>
   <ul id="teamList"></ul>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-      const welcomeMessage = document.getElementById('welcomeMessage');
-      const createTeamForm = document.getElementById('createTeamForm');
-      const teamList = document.getElementById('teamList');
-
-      if (!loggedInUser) {
-        window.location.href = '/login';
-      } else {
-        welcomeMessage.textContent = `Welcome, ${loggedInUser.name}`;
-
-        fetch('/api/teams')
-          .then(response => response.json())
-          .then(teams => {
-            teams.forEach(team => {
-              const listItem = document.createElement('li');
-
-              const name = document.createElement('p');
-              name.innerHTML = `<strong>Team Name:</strong> ${team.teamName}`;
-
-              const sector = document.createElement('p');
-              sector.innerHTML = `<strong>Sector:</strong> ${team.sector}`;
-
-              const teamLeader = document.createElement('p');
-              teamLeader.innerHTML = `<strong>Team Leader:</strong> ${team.teamLeader}`;
-
-              const members = document.createElement('p');
-              members.innerHTML = `<strong>Number of Members:</strong> ${team.members}`;
-
-              const description = document.createElement('p');
-              description.innerHTML = `<strong>Description:</strong> ${team.description}`;
-
-              const creationDate = document.createElement('p');
-              creationDate.innerHTML = `<strong>Creation Date:</strong> ${team.creationDate}`;
-
-              listItem.appendChild(name);
-              listItem.appendChild(sector);
-              listItem.appendChild(teamLeader);
-              listItem.appendChild(members);
-              listItem.appendChild(description);
-              listItem.appendChild(creationDate);
-
-              teamList.appendChild(listItem);
-            });
-          });
-
-        createTeamForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          const teamName = document.getElementById('teamName').value;
-          const sector = document.getElementById('sector').value;
-          const teamLeader = document.getElementById('teamLeader').value;
-          const members = document.getElementById('members').value;
-          const description = document.getElementById('description').value;
-
-          fetch('/api/teams', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ teamName, sector, teamLeader, members, description })
-          })
-          .then(response => response.json())
-          .then(newTeam => {
-            const listItem = document.createElement('li');
-
-            const name = document.createElement('p');
-            name.innerHTML = `<strong>Team Name:</strong> ${newTeam.teamName}`;
-
-            const sector = document.createElement('p');
-            sector.innerHTML = `<strong>Sector:</strong> ${newTeam.sector}`;
-
-            const teamLeader = document.createElement('p');
-            teamLeader.innerHTML = `<strong>Team Leader:</strong> ${newTeam.teamLeader}`;
-
-            const members = document.createElement('p');
-            members.innerHTML = `<strong>Number of Members:</strong> ${newTeam.members}`;
-
-            const description = document.createElement('p');
-            description.innerHTML = `<strong>Description:</strong> ${newTeam.description}`;
-
-            const creationDate = document.createElement('p');
-            creationDate.innerHTML = `<strong>Creation Date:</strong> ${newTeam.creationDate}`;
-
-            listItem.appendChild(name);
-            listItem.appendChild(sector);
-            listItem.appendChild(teamLeader);
-            listItem.appendChild(members);
-            listItem.appendChild(description);
-            listItem.appendChild(creationDate);
-
-            teamList.appendChild(listItem);
-
-            createTeamForm.reset();
-          })
-          .catch(error => console.error('Error:', error));
-        });
-      }
-    });
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teams</title>
-</head>
-<body>
-  <h1>Teams</h1>
-  <div id="welcomeMessage"></div>
-  <h2>Create a New Team</h2>
-  <form id="createTeamForm">
-    <label for="teamName">Team Name:</label>
-    <input type="text" id="teamName" required>
-    <label for="sector">Sector:</label>
-    <input type="text" id="sector" required>
-    <label for="teamLeader">Team Leader:</label>
-    <input type="text" id="teamLeader" required>
-    <label for="members">Number of Members:</label>
-    <input type="number" id="members" required>
-    <label for="description">Description:</label>
-    <textarea id="description" required></textarea>
-    <button type="submit">Create Team</button>
-  </form>
-  <h2>Existing Teams</h2>
-  <ul id="teamList"></ul>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-      const welcomeMessage = document.getElementById('welcomeMessage');
-      const createTeamForm = document.getElementById('createTeamForm');
-      const teamList = document.getElementById('teamList');
-
-      if (!loggedInUser) {
-        window.location.href = '/login';
-      } else {
-        welcomeMessage.textContent = `Welcome, ${loggedInUser.name}`;
-
-        fetch('/api/teams')
-          .then(response => response.json())
-          .then(teams => {
-            teams.forEach(team => {
-              const listItem = document.createElement('li');
-
-              const name = document.createElement('p');
-              name.innerHTML = `<strong>Team Name:</strong> ${team.teamName}`;
-
-              const sector = document.createElement('p');
-              sector.innerHTML = `<strong>Sector:</strong> ${team.sector}`;
-
-              const teamLeader = document.createElement('p');
-              teamLeader.innerHTML = `<strong>Team Leader:</strong> ${team.teamLeader}`;
-
-              const members = document.createElement('p');
-              members.innerHTML = `<strong>Number of Members:</strong> ${team.members}`;
-
-              const description = document.createElement('p');
-              description.innerHTML = `<strong>Description:</strong> ${team.description}`;
-
-              const creationDate = document.createElement('p');
-              creationDate.innerHTML = `<strong>Creation Date:</strong> ${team.creationDate}`;
-
-              listItem.appendChild(name);
-              listItem.appendChild(sector);
-              listItem.appendChild(teamLeader);
-              listItem.appendChild(members);
-              listItem.appendChild(description);
-              listItem.appendChild(creationDate);
-
-              teamList.appendChild(listItem);
-            });
-          });
-
-        createTeamForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          const teamName = document.getElementById('teamName').value;
-          const sector = document.getElementById('sector').value;
-          const teamLeader = document.getElementById('teamLeader').value;
-          const members = document.getElementById('members').value;
-          const description = document.getElementById('description').value;
-
-          fetch('/api/teams', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ teamName, sector, teamLeader, members, description })
-          })
-          .then(response => response.json())
-          .then(newTeam => {
-            const listItem = document.createElement('li');
-
-            const name = document.createElement('p');
-            name.innerHTML = `<strong>Team Name:</strong> ${newTeam.teamName}`;
-
-            const sector = document.createElement('p');
-            sector.innerHTML = `<strong>Sector:</strong> ${newTeam.sector}`;
-
-            const teamLeader = document.createElement('p');
-            teamLeader.innerHTML = `<strong>Team Leader:</strong> ${newTeam.teamLeader}`;
-
-            const members = document.createElement('p');
-            members.innerHTML = `<strong>Number of Members:</strong> ${newTeam.members}`;
-
-            const description = document.createElement('p');
-            description.innerHTML = `<strong>Description:</strong> ${newTeam.description}`;
-
-            const creationDate = document.createElement('p');
-            creationDate.innerHTML = `<strong>Creation Date:</strong> ${newTeam.creationDate}`;
-
-            listItem.appendChild(name);
-            listItem.appendChild(sector);
-            listItem.appendChild(teamLeader);
-            listItem.appendChild(members);
-            listItem.appendChild(description);
-            listItem.appendChild(creationDate);
-
-            teamList.appendChild(listItem);
-
-            createTeamForm.reset();
-          })
-          .catch(error => console.error('Error:', error));
-        });
-      }
-    });
-  </script>
+  <script src="js/teams.js"></script>
 </body>
 </html>
