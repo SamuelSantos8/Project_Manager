@@ -1,6 +1,6 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #e0e0e0;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,29 +9,45 @@ body {
     height: 100vh;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 #loginForm {
-    width: 50%;
+    width: 100%;
+    max-width: 400px;
     background: #ffffff;
-    padding: 17rem;
+    padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Adicionado para incluir o padding no cálculo da largura */
+}
+
+#loginForm h1 {
+    margin-bottom: 1.5rem;
+    color: #1e88e5;
+    text-align: center;
+    font-weight: 700; /* Ajustando a fonte para negrito */
 }
 
 #loginForm label {
+    display: block;
     font-weight: 500;
-    margin-bottom: 1000px;
-}
-#login-label{
-    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #333333;
 }
 
 #loginForm input {
-    width: 100%;
+    width: 100%; /* Alterado para 100% */
     padding: 10px;
     border: 1px solid #b0bec5;
     border-radius: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     font-size: 14px;
+    box-sizing: border-box; /* Adicionado para incluir o padding no cálculo da largura */
 }
 
 #loginForm button {
@@ -44,6 +60,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 1rem;
 }
 
 #loginForm button:hover {
@@ -53,5 +70,18 @@ body {
 #loginMessage {
     color: #f44336;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 1rem;
+}
+
+a {
+    color: #1e88e5;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
