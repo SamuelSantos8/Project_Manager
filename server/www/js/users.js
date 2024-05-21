@@ -1,60 +1,31 @@
-// Dados dos usuários
-const usersData = [
-  {
-      name: "Alice Silva",
-      email: "alice@example.com",
-      jobTitle: "Desenvolvedora",
-      creationDate: "01/05/2024"
-  },
-  {
-      name: "Bruno Costa",
-      email: "bruno@example.com",
-      jobTitle: "Designer",
-      creationDate: "02/05/2024"
-  },
-  {
-      name: "Carla Souza",
-      email: "carla@example.com",
-      jobTitle: "Gestora de Projetos",
-      creationDate: "03/05/2024"
-  },
-  {
-      name: "Daniel Oliveira",
-      email: "daniel@example.com",
-      jobTitle: "Tester",
-      creationDate: "04/05/2024"
-  }
-];
-
-// Função para exibir os usuários na página
-function displayUsers() {
+document.addEventListener("DOMContentLoaded", () => {
   const userList = document.getElementById('userList');
-  
-  usersData.forEach(user => {
-      const userBox = document.createElement('div');
-      userBox.classList.add('user-box');
 
-      const userName = document.createElement('p');
-      userName.classList.add('user-name');
-      userName.textContent = `User Name: ${user.name}`;
+  fetch('/api/users')
+    .then(response => response.json())
+    .then(usersData => {
+      usersData.forEach(user => {
+        const listItem = document.createElement('li');
 
-      const userEmail = document.createElement('p');
-      userEmail.textContent = `Email: ${user.email}`;
+        const name = document.createElement('p');
+        name.appendChild(document.createTextNode(`User Name: ${user.name}`));
 
-      const userJobTitle = document.createElement('p');
-      userJobTitle.textContent = `Job Title: ${user.jobTitle}`;
+        const email = document.createElement('p');
+        email.appendChild(document.createTextNode(`Email: ${user.email}`));
 
-      const userCreationDate = document.createElement('p');
-      userCreationDate.textContent = `Creation Date: ${user.creationDate}`;
+        const jobTitle = document.createElement('p');
+        jobTitle.appendChild(document.createTextNode(`Job Title: ${user.jobTitle}`));
 
-      userBox.appendChild(userName);
-      userBox.appendChild(userEmail);
-      userBox.appendChild(userJobTitle);
-      userBox.appendChild(userCreationDate);
+        const teamId = document.createElement('p');
+        teamId.appendChild(document.createTextNode(`Team ID: ${user.teamId}`));
 
-      userList.appendChild(userBox);
-  });
-}
+        listItem.appendChild(name);
+        listItem.appendChild(email);
+        listItem.appendChild(jobTitle);
+        listItem.appendChild(teamId);
 
-// Chamar a função para exibir os usuários na página
-displayUsers();
+        userList.appendChild(listItem);
+      });
+    })
+    .catch(error => console.error('Error:', error));
+});

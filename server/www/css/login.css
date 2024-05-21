@@ -23,14 +23,14 @@ body {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Adicionado para incluir o padding no cálculo da largura */
+    box-sizing: border-box; 
 }
 
 #loginForm h1 {
     margin-bottom: 1.5rem;
     color: #1e88e5;
     text-align: center;
-    font-weight: 700; /* Ajustando a fonte para negrito */
+    font-weight: 700; 
 }
 
 #loginForm label {
@@ -41,13 +41,13 @@ body {
 }
 
 #loginForm input {
-    width: 100%; /* Alterado para 100% */
+    width: 100%; 
     padding: 10px;
     border: 1px solid #b0bec5;
     border-radius: 4px;
     margin-bottom: 1rem;
     font-size: 14px;
-    box-sizing: border-box; /* Adicionado para incluir o padding no cálculo da largura */
+    box-sizing: border-box; 
 }
 
 #loginForm button {

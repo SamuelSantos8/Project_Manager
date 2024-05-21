@@ -4,17 +4,14 @@ const fs = require('fs');
 const app = express();
 const port = 1234;
 
-// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'www'))); // Serve static files from 'www' directory
+app.use(express.static(path.join(__dirname, 'www'))); 
 
-// Redirect to login if not logged in
 app.get('/', (req, res) => {
   res.redirect('/login');
 });
 
-// Login endpoint
 app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   fs.readFile('data/users.json', (err, data) => {
@@ -33,7 +30,6 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-// Get all teams
 app.get('/api/teams', (req, res) => {
   fs.readFile('data/teams.json', (err, data) => {
     if (err) {
@@ -42,6 +38,24 @@ app.get('/api/teams', (req, res) => {
 
     const teams = JSON.parse(data);
     res.json(teams);
+  });
+});
+
+app.get('/api/teams/:id', (req, res) => {
+  const teamId = parseInt(req.params.id);
+  fs.readFile('data/teams.json', (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to read teams data' });
+    }
+
+    const teams = JSON.parse(data);
+    const team = teams.find(t => t.id === teamId);
+
+    if (team) {
+      res.json(team);
+    } else {
+      res.status(404).json({ error: 'Team not found' });
+    }
   });
 });
 
@@ -55,18 +69,17 @@ app.get('/api/users', (req, res) => {
   });
 });
 
-
-// Create a new team
 app.post('/api/teams', (req, res) => {
   const { teamName, sector, teamLeader, members, description } = req.body;
   const newTeam = {
-    id: Date.now(), // simple unique id generation
+    id: Date.now(), 
     teamName,
     sector,
     teamLeader,
     members: parseInt(members),
     description,
-    creationDate: new Date().toISOString().split('T')[0]
+    creationDate: new Date().toISOString().split('T')[0],
+    projects: [] 
   };
 
   fs.readFile('data/teams.json', (err, data) => {
@@ -87,22 +100,75 @@ app.post('/api/teams', (req, res) => {
   });
 });
 
-// Serve login page
+app.get('/api/teams/:id/projects', (req, res) => {
+  const teamId = parseInt(req.params.id);
+  fs.readFile('data/teams.json', (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to read teams data' });
+    }
+
+    const teams = JSON.parse(data);
+    const team = teams.find(t => t.id === teamId);
+
+    if (team) {
+      res.json(team.projects || []);
+    } else {
+      res.status(404).json({ error: 'Team not found' });
+    }
+  });
+});
+
+app.post('/api/teams/:id/projects', (req, res) => {
+  const teamId = parseInt(req.params.id);
+  const { name, description, endDate } = req.body;
+  const newProject = {
+    id: Date.now(),
+    name,
+    description,
+    endDate
+  };
+
+  fs.readFile('data/teams.json', (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to read teams data' });
+    }
+
+    const teams = JSON.parse(data);
+    const teamIndex = teams.findIndex(t => t.id === teamId);
+
+    if (teamIndex !== -1) {
+      teams[teamIndex].projects = teams[teamIndex].projects || [];
+      teams[teamIndex].projects.push(newProject);
+
+      fs.writeFile('data/teams.json', JSON.stringify(teams, null, 2), (err) => {
+        if (err) {
+          return res.status(500).json({ error: 'Failed to save new project' });
+        }
+
+        res.status(201).json(newProject);
+      });
+    } else {
+      res.status(404).json({ error: 'Team not found' });
+    }
+  });
+});
+
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'www', 'login.html')); // Ensure this path is correct
+  res.sendFile(path.join(__dirname, 'www', 'login.html')); 
 });
 
-// Serve teams page
 app.get('/teams', (req, res) => {
-  res.sendFile(path.join(__dirname, 'www', 'teams.html')); // Ensure this path is correct
+  res.sendFile(path.join(__dirname, 'www', 'teams.html')); 
 });
 
-// 404 handler
+app.get('/teamProjects', (req, res) => {
+  res.sendFile(path.join(__dirname, 'www', 'teamProjects.html'));
+});
+
 app.use((req, res, next) => {
   res.status(404).send({ msg: 'No resource or page found.' });
 });
 
-// Error handler
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).send(err);

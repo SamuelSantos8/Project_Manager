@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/teamProjects.css">
+  <title>Team Projects</title>
 </head>
 <body>
-    
+  <header>
+    <div class="title-bar">
+      <h1 id="teamName">Team Name</h1>
+      <a href="teams.html" class="home-button">Back to Teams</a>
+    </div>
+  </header>
+  
+  <main>
+    <div>
+      <p>Team Leader: <span id="teamLeader"></span></p>
+      <p>Sector: <span id="sector"></span></p>
+      <p>Description: <span id="description"></span></p>
+      <p>Creation Date: <span id="creationDate"></span></p>
+    </div>
+
+    <h2>Projects</h2>
+    <ul id="projectList"></ul>
+
+    <h2>Create New Project</h2>
+    <form id="createProjectForm">
+      <label for="projectName">Project Name:</label>
+      <input type="text" id="projectName" name="projectName" required><br>
+      <label for="projectDescription">Description:</label>
+      <input type="text" id="projectDescription" name="projectDescription" required><br>
+      <label for="projectEndDate">End Date:</label>
+      <input type="date" id="projectEndDate" name="projectEndDate" required><br>
+      <button type="submit">Create Project</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 - Developed by Afonso Bergano, Samuel Santos & João Correia</p>
+  </footer>
+
+  <script src="js/teamProjects.js"></script>
 </body>
 </html>

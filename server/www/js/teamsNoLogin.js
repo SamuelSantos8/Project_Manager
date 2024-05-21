@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
-  const welcomeMessage = document.getElementById('welcomeMessage');
   const teamList = document.getElementById('teamList');
 
 

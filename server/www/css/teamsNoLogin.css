@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #1e88e5; /* Azul */
+    background-color: #1e88e5;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -19,26 +19,24 @@ header h1 {
 main {
     padding: 20px;
     display: flex;
-    flex-direction: column; /* Exibir os blocos de usuário em coluna vertical */
+    flex-direction: column;
 }
 
 footer {
-    background-color: #1e88e5; /* Azul */
+    background-color: #1e88e5;
     color: white;
     padding: 10px 0;
     text-align: center;
 }
 
-/* Estilos para as caixas de equipe */
 .team-box {
-    background-color: #ffffff; /* Branco */
+    background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     padding: 20px;
 }
 
-/* Adicionando estilo para o título e link Home */
 .title-bar {
     background-color: #1e88e5; 
     color: white;
@@ -57,9 +55,8 @@ footer {
     text-decoration: none;
 }
 
-/* Estilo para o botão Home */
 .home-button {
-    background-color: #1e88e5; /* Azul */
+    background-color: #1e88e5;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -68,7 +65,7 @@ footer {
 }
 
 .home-button:hover {
-    background-color: #1565c0; /* Azul mais escuro ao passar o mouse */
+    background-color: #1565c0;
 }
 
 .home-button a {
@@ -101,7 +98,7 @@ form textarea {
 form button {
     width: 100%;
     padding: 10px;
-    background-color: #1e88e5; /* Azul */
+    background-color: #1e88e5;
     border: none;
     border-radius: 4px;
     color: #ffffff;
@@ -111,7 +108,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #1565c0; /* Azul mais escuro ao passar o mouse */
+    background-color: #1565c0;
 }
 
 ul {

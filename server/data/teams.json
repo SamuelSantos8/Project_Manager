@@ -6,7 +6,8 @@
     "teamLeader": "Ana Silva",
     "members": 5,
     "description": "Equipa responsável pelo desenvolvimento de software.",
-    "creationDate": "2024-01-15"
+    "creationDate": "2024-01-15",
+    "projects": []
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "teamLeader": "João Costa",
     "members": 3,
     "description": "Equipa responsável pelo design gráfico e UX/UI.",
-    "creationDate": "2024-01-18"
+    "creationDate": "2024-01-18",
+    "projects": []
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "teamLeader": "Maria Oliveira",
     "members": 4,
     "description": "Equipa responsável pela gestão e organização dos projetos.",
-    "creationDate": "2024-01-20"
+    "creationDate": "2024-01-20",
+    "projects": []
   },
   {
     "id": 4,
@@ -33,60 +36,36 @@
     "teamLeader": "Pedro Ferreira",
     "members": 2,
     "description": "Equipa responsável pelos testes e garantia de qualidade.",
-    "creationDate": "2024-01-22"
+    "creationDate": "2024-01-22",
+    "projects": []
   },
   {
-    "id": 1716218218978,
-    "teamName": "Boda",
-    "sector": "2",
-    "teamLeader": "Alice Silva",
-    "members": null,
-    "description": "aaaa",
-    "creationDate": "2024-05-20"
-  },
-  {
-    "id": 1716218224072,
-    "teamName": "Boda",
-    "sector": "2",
-    "teamLeader": "Alice Silva",
-    "members": null,
-    "description": "aaaa",
-    "creationDate": "2024-05-20"
-  },
-  {
-    "id": 1716218279118,
-    "teamName": "awd",
-    "sector": "awd",
-    "teamLeader": "Alice Silva",
-    "members": null,
-    "description": "awdad",
-    "creationDate": "2024-05-20"
-  },
-  {
-    "id": 1716220460025,
-    "teamName": "awdawd",
-    "sector": "awdawd",
+    "id": 1716243322725,
+    "teamName": "Bruno's Team",
+    "sector": "Bruno's Sector",
     "teamLeader": "Bruno Costa",
     "members": null,
-    "description": "awdawdw",
-    "creationDate": "2024-05-20"
-  },
-  {
-    "id": 1716227046062,
-    "teamName": "Boda",
-    "sector": "sas",
-    "teamLeader": "Bruno Costa",
-    "members": null,
-    "description": "saasas",
-    "creationDate": "2024-05-20"
-  },
-  {
-    "id": 1716227612939,
-    "teamName": "asdsdds",
-    "sector": "dsdasddsa",
-    "teamLeader": "Alice Silva",
-    "members": null,
-    "description": "dssdaasdasd",
-    "creationDate": "2024-05-20"
+    "description": "Bruno's Description",
+    "creationDate": "2024-05-20",
+    "projects": [
+      {
+        "id": 1716243345603,
+        "name": "my project",
+        "description": "project description",
+        "endDate": "2024-05-10"
+      },
+      {
+        "id": 1716243798136,
+        "name": "my project 2",
+        "description": "project description",
+        "endDate": "2024-05-10"
+      },
+      {
+        "id": 1716244220653,
+        "name": "awd",
+        "description": "awdad",
+        "endDate": "2024-05-28"
+      }
+    ]
   }
 ]
