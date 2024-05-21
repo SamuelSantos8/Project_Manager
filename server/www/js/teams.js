@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((response) => response.json())
       .then((teams) => {
         teams.forEach((team) => {
-          const isUserInTeam = team.teamLeader === loggedInUser.name || (Array.isArray(team.members) && team.members.includes(loggedInUser.name));
+          const isUserInTeam = team.id === loggedInUser.teamId;
 
           if (isUserInTeam) {
             const listItem = document.createElement("li");
